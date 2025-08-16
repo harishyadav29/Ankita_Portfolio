@@ -1,0 +1,2243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ankita Mall - Professional Data Analyst Portfolio showcasing expertise in Python, SQL, Power BI, and Business Intelligence">
+    <meta name="keywords" content="Data Analyst, Python Developer, SQL, Power BI, Business Intelligence, Data Science">
+    <meta name="author" content="Ankita Mall">
+    
+    
+    <title>Ankita Mall | Data Analyst & Business Intelligence Specialist</title>
+    
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <style>
+       
+        :root {
+            
+            --primary-color: #1e3a8a;        /* Deep Blue */
+            --secondary-color: #3b82f6;       /* Medium Blue */
+            --accent-color: #60a5fa;          /* Light Blue */
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            --gradient-secondary: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+            
+            /* Neutral Colors */
+            --text-primary: #1f2937;          /* Dark Gray */
+            --text-secondary: #6b7280;        /* Medium Gray */
+            --text-light: #9ca3af;            /* Light Gray */
+            --background-primary: #ffffff;     /* White */
+            --background-secondary: #f8fafc;   /* Light Gray Background */
+            --border-color: #e5e7eb;          /* Border Gray */
+            
+            /* Typography */
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-secondary: Georgia, 'Times New Roman', serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;    /* 8px */
+            --spacing-sm: 1rem;      /* 16px */
+            --spacing-md: 1.5rem;    /* 24px */
+            --spacing-lg: 2rem;      /* 32px */
+            --spacing-xl: 3rem;      /* 48px */
+            --spacing-2xl: 4rem;     /* 64px */
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;   /* 6px */
+            --radius-md: 0.5rem;     /* 8px */
+            --radius-lg: 0.75rem;    /* 12px */
+            --radius-xl: 1rem;       /* 16px */
+            --radius-2xl: 1.5rem;    /* 24px */
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease-in-out;
+            --transition-normal: 0.3s ease-in-out;
+            --transition-slow: 0.5s ease-in-out;
+        }
+        
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        /* 
+           2. BASE TYPOGRAPHY & LAYOUT
+         */
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-secondary);
+            overflow-x: hidden;
+        }
+        
+        /* Typography Hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        
+        h1 { font-size: 3.5rem; font-family: var(--font-secondary); }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.875rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1.125rem; }
+        
+        p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+        
+        /* Links */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Container System */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .container-fluid {
+            width: 100%;
+            padding: 0 var(--spacing-md);
+        }
+        
+        /* 
+           3. HEADER & NAVIGATION
+         */
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: var(--font-secondary);
+        }
+        
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+        
+        .nav-link {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            transition: var(--transition-normal);
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        /*
+           4. HERO SECTION WITH IMAGE AVATAR
+         */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>');
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-60px) translateY(-60px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-avatar {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-lg);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: pulse 2s ease-in-out infinite alternate;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-avatar::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            z-index: -1;
+        }
+        
+        .hero-avatar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 60%);
+            pointer-events: none;
+        }
+        
+        .hero-avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: var(--transition-normal);
+            filter: brightness(1.1) contrast(1.1);
+        }
+        
+        .hero-avatar:hover .hero-avatar-image {
+            transform: scale(1.05);
+            filter: brightness(1.2) contrast(1.2);
+        }
+        
+        .hero-avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-avatar-upload {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            font-size: 1.2rem;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .hero-avatar-upload:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .hero-avatar-upload input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            100% { transform: scale(1.02); box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+        }
+        
+        .hero h1 {
+            color: white;
+            margin-bottom: var(--spacing-sm);
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-normal);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* 
+           5. SECTION BASE STYLES
+         */
+        
+        .section {
+            padding: var(--spacing-2xl) 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background: var(--background-primary);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-sm);
+        }
+        
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* 
+           6. PROFESSIONAL SUMMARY
+         */
+        
+        .summary {
+            background: var(--gradient-secondary);
+            border-radius: var(--radius-2xl);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .summary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .summary-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .summary h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-size: 2.5rem;
+        }
+        
+        .summary p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            text-align: justify;
+            color: var(--text-secondary);
+        }
+        
+        /* Highlight key terms */
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* 
+           7. SKILLS SECTION
+         */
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .skill-category {
+            background: var(--background-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .skill-tag {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-lg);
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(30, 58, 138, 0.2);
+            transition: var(--transition-normal);
+            cursor: default;
+        }
+        
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* 
+           8. EXPERIENCE SECTION
+     */
+        
+        .experience-timeline {
+            position: relative;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-primary);
+            transform: translateX(-50%);
+        }
+        
+        .experience-item {
+            position: relative;
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .experience-content {
+            background: var(--background-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            width: calc(50% - 30px);
+            position: relative;
+        }
+        
+        .experience-item:nth-child(odd) .experience-content {
+            margin-left: auto;
+        }
+        
+        .experience-marker {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border: 4px solid var(--background-secondary);
+            border-radius: 50%;
+        }
+        
+        .experience-date {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .experience-title {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .experience-company {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .experience-description ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .experience-description li {
+            position: relative;
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+        
+        .experience-description li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+        }
+        
+        /* 
+           9. PROJECTS SHOWCASE
+         */
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .project-card {
+            background: var(--background-primary);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+            position: relative;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-primary);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .project-header {
+            padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
+        }
+        
+        .project-title {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .project-duration {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .project-description {
+            padding: 0 var(--spacing-xl);
+        }
+        
+        .project-description ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .project-description li {
+            position: relative;
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .project-description li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .project-footer {
+            padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+            transition: var(--transition-normal);
+            text-decoration: none;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+        
+        .tech-tag {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 4px var(--spacing-xs);
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* 
+           10. EDUCATION SECTION
+         */
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .education-item {
+            background: var(--background-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition-normal);
+        }
+        
+        .education-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .education-degree {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.25rem;
+        }
+        
+        .education-school {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .education-duration {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .education-score {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        /* 
+           11. CERTIFICATIONS SECTION
+         */
+        
+        .certifications {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            background: var(--gradient-secondary);
+            border-radius: var(--radius-2xl);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            font-size: 1.125rem;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cert-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            color: white;
+        }
+        
+        /* 
+           12. FOOTER
+         */
+        
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+        
+        .footer p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+        
+        .footer-social {
+            margin-top: var(--spacing-md);
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.25rem;
+            transition: var(--transition-normal);
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        /* 
+           13. RESPONSIVE DESIGN
+         */
+        
+        @media (max-width: 768px) {
+            /* Typography adjustments */
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.25rem; }
+            
+            /* Layout adjustments */
+            .container { padding: 0 var(--spacing-sm); }
+            .section { padding: var(--spacing-xl) 0; }
+            
+            /* Navigation */
+            .nav { display: none; }
+            .mobile-menu-toggle { display: block; }
+            
+            /* Hero section */
+            .hero-avatar { 
+                width: 180px; 
+                height: 180px; 
+            }
+            .hero-contact { flex-direction: column; align-items: center; }
+            
+            /* Experience timeline */
+            .experience-timeline::before { left: 20px; }
+            .experience-content { width: calc(100% - 60px); margin-left: 40px !important; }
+            .experience-marker { left: 20px; }
+            
+            /* Grids */
+            .skills-grid,
+            .projects-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Projects */
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                margin-bottom: var(--spacing-md);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.75rem; }
+            .skill-category,
+            .project-card,
+            .education-item {
+                padding: var(--spacing-md);
+            }
+            
+            .hero-avatar { 
+                width: 150px; 
+                height: 150px; 
+            }
+            
+            .hero-avatar-upload {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* 
+           14. UTILITY CLASSES
+        */
+        
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .mb-0 { margin-bottom: 0; }
+        .mb-1 { margin-bottom: var(--spacing-xs); }
+        .mb-2 { margin-bottom: var(--spacing-sm); }
+        .mb-3 { margin-bottom: var(--spacing-md); }
+        .mb-4 { margin-bottom: var(--spacing-lg); }
+        .mb-5 { margin-bottom: var(--spacing-xl); }
+        
+        .mt-0 { margin-top: 0; }
+        .mt-1 { margin-top: var(--spacing-xs); }
+        .mt-2 { margin-top: var(--spacing-sm); }
+        .mt-3 { margin-top: var(--spacing-md); }
+        .mt-4 { margin-top: var(--spacing-lg); }
+        .mt-5 { margin-top: var(--spacing-xl); }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Image Upload Notification */
+        .upload-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            transform: translateX(400px);
+            transition: transform 0.3s ease-out;
+            z-index: 10000;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .upload-notification.show {
+            transform: translateX(0);
+        }
+        
+        .upload-notification.success {
+            background: #10b981;
+        }
+        
+        .upload-notification.error {
+            background: #ef4444;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .header,
+            .scroll-indicator,
+            .mobile-menu-toggle,
+            .hero-avatar-upload { display: none; }
+            
+            .hero { min-height: auto; padding: 2rem 0; }
+            .section { padding: 1rem 0; }
+            
+            * { 
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Ankita Mall</div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#experience" class="nav-link">Experience</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#education" class="nav-link">Education</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+   
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-avatar animate__animated animate__fadeInDown">
+                    <!-- Profile Image Container -->
+                    <img id="profileImage" 
+                         class="hero-avatar-image" 
+                         src="Ankita_Image.jpg" 
+                         alt="Ankita Mall - Data Analyst"
+                         style="display: block;">
+                    
+                    <!-- Fallback Placeholder (hidden by default) -->
+                    <div id="profilePlaceholder" class="hero-avatar-placeholder" style="display: none;">
+                        AM
+                    </div>
+                    
+                    <!-- Image Upload Button -->
+                    <div class="hero-avatar-upload" title="Upload Profile Picture">
+                        <input type="file" id="imageUpload" accept="image/*" aria-label="Upload profile picture">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                
+                <h1 class="animate__animated animate__fadeInUp animate__delay-1s">Ankita Mall</h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-2s">
+                    Data Analyst | AI Enthusiasts | Business Intelligence Specialist
+                </p>
+                
+                <div class="hero-contact animate__animated animate__fadeInUp animate__delay-3s">
+                    <a href="tel:+917007204032" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7007204032</span>
+                    </a>
+                    <a href="mailto:ankitamall1405@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ankitamall1405@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/ankitamall" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/AnkitaMall" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                
+                <div class="contact-item mt-3" style="justify-content: center; background: rgba(255, 255, 255, 0.1);">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Padari Bazar, Gorakhpur, Uttar Pradesh 273014</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Upload Notification -->
+    <div id="uploadNotification" class="upload-notification">
+        <span id="notificationText">Image uploaded successfully!</span>
+    </div>
+
+    
+    <section class="section" id="about">
+        <div class="container">
+            <div class="summary fade-in">
+                <div class="summary-content">
+                    <h2>Professional Summary</h2>
+                    <p>
+                        <span class="highlight">Results-driven Data Analyst</span> with comprehensive expertise in <span class="highlight">Python, SQL, and advanced analytics tools</span>, specializing in transforming complex datasets into actionable business insights. With hands-on experience analyzing <span class="highlight">millions of records</span> and creating comprehensive visualizations, I excel at identifying patterns, trends, and opportunities that drive strategic decision-making.
+                    </p>
+                    <p>
+                        Proficient in <span class="highlight">machine learning, statistical analysis, and business intelligence tools</span> including Power BI and Tableau. Demonstrated ability to execute <span class="highlight">end-to-end data projects</span>, from data cleaning and preprocessing to advanced analytics and stakeholder-ready reporting. Strong background in <span class="highlight">Electronics Engineering</span> combined with practical experience in data science makes me uniquely positioned to bridge technical complexity with business value.
+                    </p>
+                    <p>
+                        Passionate about leveraging data to solve real-world problems and drive organizational growth through <span class="highlight">data-driven insights</span>. Proven track record of improving business efficiency by <span class="highlight">30%</span> through comprehensive analytics and strategic recommendations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i> Technical Skills
+                </h2>
+                <p class="section-description">
+                    Comprehensive technical expertise across data analysis, programming, and business intelligence tools
+                </p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>
+                        <i class="fas fa-code"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>
+                        <i class="fas fa-chart-bar"></i>
+                        Visualization Tools
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>
+                        <i class="fas fa-python"></i>
+                        Python Libraries
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Dask</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>
+                        <i class="fas fa-database"></i>
+                        Data Analysis
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Advanced Excel</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">EDA</span>
+                        <span class="skill-tag">Regression Analysis</span>
+                        <span class="skill-tag">Web Scraping</span>
+                        <span class="skill-tag">Data Wrangling</span>
+                        <span class="skill-tag">Data Modeling</span>
+                        <span class="skill-tag">Association Rules</span>
+                        <span class="skill-tag">Business Intelligence</span>
+                        <span class="skill-tag">Data Preprocessing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i> Professional Experience
+                </h2>
+                <p class="section-description">
+                    Professional journey and key achievements in data analytics and business intelligence
+                </p>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="experience-item fade-in">
+                    <div class="experience-marker"></div>
+                    <div class="experience-content">
+                        <div class="experience-date">May 2024 – August 2024</div>
+                        <h3 class="experience-title">Data Analyst Intern</h3>
+                        <div class="experience-company">Trainity</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Achieved proficiency in <strong>10+ analytics tools</strong>, including SQL, Power BI, and Spreadsheets, leveraging them for comprehensive data modeling, reporting, and visualization to generate actionable business insights</li>
+                                <li>Successfully executed <strong>8+ complex projects</strong> utilizing SQL, Power BI, and advanced spreadsheet functions to analyze and visualize large-scale datasets, directly contributing to data-backed stakeholder decision-making processes</li>
+                                <li>Developed and implemented data visualization strategies that improved reporting efficiency and enhanced stakeholder understanding of key business metrics</li>
+                                <li>Collaborated with cross-functional teams to identify business requirements and translate them into technical specifications for data analysis projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">
+                    <i class="fas fa-project-diagram"></i> Featured Projects
+                </h2>
+                <p class="section-description">
+                    Comprehensive data analysis projects demonstrating technical expertise and business impact
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1: Instacart Market Basket Analysis -->
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3 class="project-title">Instacart Market Basket Analysis</h3>
+                        <div class="project-duration">August 2025</div>
+                    </div>
+                    
+                    <div class="project-description">
+                        <ul>
+                            <li>Conducted comprehensive analysis of <strong>3.4M+ grocery orders</strong> using Python (Pandas, NumPy) to identify top-selling products, purchase frequency patterns, and optimal shopping times</li>
+                            <li>Implemented advanced <strong>association rule mining algorithms</strong> to uncover 15+ high-confidence product pairings, enabling targeted cross-selling strategies</li>
+                            <li>Created a comprehensive suite of <strong>10+ data visualizations</strong> using Matplotlib and Seaborn, showcasing basket size distribution, reorder rates, and department-wise sales trends</li>
+                            <li>Developed stakeholder-ready documentation and actionable insights that improved <strong>business decision-making efficiency by 30%</strong> through data-driven recommendations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Seaborn</span>
+                            <span class="tech-tag">Association Rules</span>
+                        </div>
+                        <a href="https://github.com/AnkitaMall/instacart-market-basket-analysis" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Zomato Restaurant Data Analysis -->
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3 class="project-title">Zomato Restaurant Data Analysis</h3>
+                        <div class="project-duration">July 2025</div>
+                    </div>
+                    
+                    <div class="project-description">
+                        <ul>
+                            <li>Performed comprehensive data cleaning and preprocessing on <strong>56K+ Zomato restaurant records</strong> using Python, handling missing values, outliers, and text normalization</li>
+                            <li>Designed and developed <strong>7+ interactive dashboards</strong> featuring key performance indicators including total restaurants, unique cuisines (9K), cities covered (99), and average ratings (3.0)</li>
+                            <li>Implemented advanced DAX functions to track critical business metrics including restaurant counts, cuisine diversity, geographic coverage, and customer satisfaction ratings</li>
+                            <li>Generated actionable insights on top-performing cities (Bangalore, Mumbai), trending cuisine types (North Indian, Chinese), and restaurant outlet classifications (33K single locations, 8K chains)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Data Cleaning</span>
+                            <span class="tech-tag">Dashboard Design</span>
+                        </div>
+                        <a href="https://github.com/AnkitaMall/zomato-restaurant-analysis" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Car Features Impact Analysis -->
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3 class="project-title">Impact of Car Features on Price and Profitability</h3>
+                        <div class="project-duration">March 2025</div>
+                    </div>
+                    
+                    <div class="project-description">
+                        <ul>
+                            <li>Analyzed comprehensive dataset of <strong>11,199 car models</strong> to identify key pricing drivers; regression analysis revealed 30% higher pricing correlation with high horsepower vehicles</li>
+                            <li>Discovered significant <strong>85% correlation</strong> between engine cylinder count and vehicle pricing, providing crucial insights for pricing strategy and market positioning</li>
+                            <li>Developed compelling data visualizations that led to identification of <strong>three key pricing opportunities</strong>, improving market responsiveness and competitive positioning by 30%</li>
+                            <li>Delivered comprehensive data-driven pricing models and strategic recommendations, enhancing decision-making processes and targeting features that significantly influence consumer demand and profitability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="tech-tag">Regression Analysis</span>
+                            <span class="tech-tag">Statistical Modeling</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Pricing Strategy</span>
+                        </div>
+                        <a href="https://github.com/AnkitaMall/car-features-price-analysis" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </h2>
+                <p class="section-description">
+                    Academic foundation supporting technical expertise and analytical thinking
+                </p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-item fade-in">
+                    <h3 class="education-degree">Bachelor of Technology in Electronics</h3>
+                    <div class="education-school">Institute of Engineering and Rural Technology, Prayagraj</div>
+                    <div class="education-duration">November 2021 – June 2025</div>
+                    <div class="education-score">CGPA: 8.04/10.00</div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <h3 class="education-degree">Higher Secondary Education</h3>
+                    <div class="education-school">Divine Public School, Gorakhpur</div>
+                    <div class="education-duration">Completed 2021</div>
+                    <div class="education-score">Percentage: 90%</div>
+                </div>
+                
+                <div class="education-item fade-in">
+                    <h3 class="education-degree">Secondary Education</h3>
+                    <div class="education-school">Toolika Public School, Mau</div>
+                    <div class="education-duration">Completed 2019</div>
+                    <div class="education-score">Percentage: 92.2%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate"></i> Professional Certifications
+                </h2>
+                <p class="section-description">
+                    Commitment to continuous learning and professional development
+                </p>
+            </div>
+            
+            <div class="certifications fade-in">
+                <a href="https://www.linkedin.com/in/ankitamall/details/certifications/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="cert-link">
+                    <i class="fas fa-award"></i>
+                    View Complete Certificate Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2025 Ankita Mall. Crafted with passion for data analytics and business intelligence.</p>
+            <p>Ready to transform your data into actionable insights.</p>
+            
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/ankitamall" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/AnkitaMall" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:ankitamall1405@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+917007204032" class="social-link">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    ============================================================================
+    JAVASCRIPT FUNCTIONALITY
+    ============================================================================
+    Interactive features, animations, and user experience enhancements
+    -->
+    <script>
+        
+        
+        const CONFIG = {
+            SCROLL_THRESHOLD: 100,
+            ANIMATION_DELAY: 150,
+            INTERSECTION_THRESHOLD: 0.1,
+            INTERSECTION_ROOT_MARGIN: '0px 0px -50px 0px',
+            MAX_IMAGE_SIZE: 5 * 1024 * 1024, // 5MB
+            ALLOWED_IMAGE_TYPES: ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
+        };
+
+       
+        
+        const elements = {
+            header: document.getElementById('header'),
+            mobileMenuToggle: document.getElementById('mobileMenuToggle'),
+            navLinks: document.querySelectorAll('.nav-link'),
+            fadeInElements: document.querySelectorAll('.fade-in'),
+            skillTags: document.querySelectorAll('.skill-tag'),
+            projectCards: document.querySelectorAll('.project-card'),
+            contactItems: document.querySelectorAll('.contact-item'),
+            heroContent: document.querySelector('.hero-content'),
+            profileImage: document.getElementById('profileImage'),
+            profilePlaceholder: document.getElementById('profilePlaceholder'),
+            imageUpload: document.getElementById('imageUpload'),
+            uploadNotification: document.getElementById('uploadNotification'),
+            notificationText: document.getElementById('notificationText')
+        };
+
+       
+        function initImageUpload() {
+            if (elements.imageUpload) {
+                elements.imageUpload.addEventListener('change', handleImageUpload);
+            }
+        }
+
+       
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            
+            if (!file) return;
+            
+            // Validate file type
+            if (!CONFIG.ALLOWED_IMAGE_TYPES.includes(file.type)) {
+                showNotification('Please upload a valid image file (JPEG, PNG, WebP)', 'error');
+                return;
+            }
+            
+            // Validate file size
+            if (file.size > CONFIG.MAX_IMAGE_SIZE) {
+                showNotification('Image size must be less than 5MB', 'error');
+                return;
+            }
+            
+            // Read and display the image
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                updateProfileImage(e.target.result);
+                showNotification('Profile image updated successfully!', 'success');
+            };
+            
+            reader.onerror = function() {
+                showNotification('Error reading image file', 'error');
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+       
+        function updateProfileImage(imageSrc) {
+            if (elements.profileImage && elements.profilePlaceholder) {
+                elements.profileImage.src = imageSrc;
+                elements.profileImage.style.display = 'block';
+                elements.profilePlaceholder.style.display = 'none';
+                
+                // Add smooth transition effect
+                elements.profileImage.style.opacity = '0';
+                setTimeout(() => {
+                    elements.profileImage.style.opacity = '1';
+                }, 100);
+                
+                // Store image in localStorage for persistence (if supported)
+                try {
+                    localStorage.setItem('profileImage', imageSrc);
+                } catch (e) {
+                    console.log('LocalStorage not available for image storage');
+                }
+            }
+        }
+
+        /**
+         * Load saved profile image from localStorage
+         */
+        function loadSavedImage() {
+            try {
+                const savedImage = localStorage.getItem('profileImage');
+                if (savedImage) {
+                    updateProfileImage(savedImage);
+                }
+            } catch (e) {
+                console.log('Could not load saved image');
+            }
+        }
+
+       
+        function showNotification(message, type = 'info') {
+            if (elements.uploadNotification && elements.notificationText) {
+                elements.notificationText.textContent = message;
+                
+                // Remove existing type classes
+                elements.uploadNotification.classList.remove('success', 'error', 'info');
+                
+                // Add new type class
+                elements.uploadNotification.classList.add(type);
+                
+                // Show notification
+                elements.uploadNotification.classList.add('show');
+                
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    elements.uploadNotification.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        
+        function debounce(func, wait, immediate) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    timeout = null;
+                    if (!immediate) func(...args);
+                };
+                const callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func(...args);
+            };
+        }
+
+       
+        function smoothScrollTo(targetId) {
+            const target = document.querySelector(targetId);
+            if (target) {
+                const headerHeight = elements.header.offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+       
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > CONFIG.SCROLL_THRESHOLD) {
+                elements.header.classList.add('scrolled');
+            } else {
+                elements.header.classList.remove('scrolled');
+            }
+        }
+
+        // Debounced scroll handler for better performance
+        const debouncedScrollHandler = debounce(handleScroll, 10);
+
+        
+        function initIntersectionObserver() {
+            const observerOptions = {
+                threshold: CONFIG.INTERSECTION_THRESHOLD,
+                rootMargin: CONFIG.INTERSECTION_ROOT_MARGIN
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add staggered delay for multiple elements
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * CONFIG.ANIMATION_DELAY);
+                        
+                        // Unobserve after animation to improve performance
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            elements.fadeInElements.forEach(element => {
+                // Set initial state
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease-out';
+                
+                // Start observing
+                observer.observe(element);
+            });
+        }
+
+       
+        function initNavigation() {
+            // Smooth scrolling for navigation links
+            elements.navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    smoothScrollTo(targetId);
+                    
+                    // Close mobile menu if open
+                    closeMobileMenu();
+                    
+                    // Update active link
+                    updateActiveNavLink(link);
+                });
+            });
+
+            // Mobile menu toggle
+            if (elements.mobileMenuToggle) {
+                elements.mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            }
+        }
+
+        /**
+         * Toggle mobile menu visibility
+         */
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('mobile-open');
+            
+            const icon = elements.mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+
+        /**
+         * Close mobile menu
+         */
+        function closeMobileMenu() {
+            const nav = document.querySelector('.nav');
+            nav.classList.remove('mobile-open');
+            
+            const icon = elements.mobileMenuToggle.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        }
+
+        
+        function updateActiveNavLink(activeLink) {
+            elements.navLinks.forEach(link => link.classList.remove('active'));
+            activeLink.classList.add('active');
+        }
+
+       
+        function initSkillTagInteractions() {
+            elements.skillTags.forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) rotate(2deg)';
+                });
+                
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+                
+                tag.addEventListener('click', function() {
+                    // Add click effect
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.05)';
+                    }, 100);
+                });
+            });
+        }
+
+        /**
+         * Initialize project card animations
+         */
+        function initProjectCardAnimations() {
+            elements.projectCards.forEach((card, index) => {
+                // Stagger animation delays
+                card.style.animationDelay = `${index * 0.2}s`;
+                
+                // Add hover tracking
+                card.addEventListener('mouseenter', function() {
+                    console.log('Project card hovered:', this.querySelector('.project-title').textContent);
+                });
+            });
+        }
+
+        /**
+         * Initialize contact item interactions
+         */
+        function initContactItemInteractions() {
+            elements.contactItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    // Track contact interactions
+                    const contactType = this.querySelector('i').className;
+                    console.log('Contact interaction:', contactType);
+                });
+            });
+        }
+
+       
+        function createTypingEffect(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            element.style.borderRight = '2px solid rgba(255,255,255,0.8)';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Remove cursor after typing is complete
+                    setTimeout(() => {
+                        element.style.borderRight = 'none';
+                    }, 1000);
+                }
+            }
+            
+            type();
+        }
+
+        
+        function createParticleAnimation() {
+            const particle = document.createElement('div');
+            
+            // Particle styling
+            Object.assign(particle.style, {
+                position: 'fixed',
+                width: Math.random() * 4 + 2 + 'px',
+                height: Math.random() * 4 + 2 + 'px',
+                background: `rgba(59, 130, 246, ${Math.random() * 0.3 + 0.1})`,
+                borderRadius: '50%',
+                pointerEvents: 'none',
+                zIndex: '-1',
+                left: Math.random() * window.innerWidth + 'px',
+                top: window.innerHeight + 10 + 'px'
+            });
+            
+            document.body.appendChild(particle);
+            
+            // Animate particle
+            const animation = particle.animate([
+                { 
+                    transform: 'translateY(0px) rotate(0deg)', 
+                    opacity: 0 
+                },
+                { 
+                    transform: `translateY(-${window.innerHeight / 3}px) rotate(180deg)`, 
+                    opacity: 1 
+                },
+                { 
+                    transform: `translateY(-${window.innerHeight + 100}px) rotate(360deg)`, 
+                    opacity: 0 
+                }
+            ], {
+                duration: 8000 + Math.random() * 4000,
+                easing: 'linear'
+            });
+            
+            // Clean up particle after animation
+            animation.onfinish = () => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            };
+        }
+
+        /**
+         * Initialize particle system
+         */
+        function initParticleSystem() {
+            // Create particles at intervals
+            setInterval(() => {
+                // Only create particles if page is visible
+                if (!document.hidden) {
+                    createParticleAnimation();
+                }
+            }, 500);
+        }
+
+        
+        function initPerformanceMonitoring() {
+            // Monitor page load performance
+            window.addEventListener('load', () => {
+                const perfData = performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Portfolio loaded in ${loadTime}ms`);
+                
+                // Track key metrics
+                if ('connection' in navigator) {
+                    console.log('Connection type:', navigator.connection.effectiveType);
+                }
+            });
+            
+            // Monitor scroll performance
+            let scrollTicking = false;
+            
+            window.addEventListener('scroll', () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(() => {
+                        debouncedScrollHandler();
+                        scrollTicking = false;
+                    });
+                    scrollTicking = true;
+                }
+            });
+        }
+
+        /**
+         * Lazy load images and heavy content
+         */
+        function initLazyLoading() {
+            if ('IntersectionObserver' in window) {
+                const lazyLoadObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const element = entry.target;
+                            
+                            // Load data-src images
+                            if (element.dataset.src) {
+                                element.src = element.dataset.src;
+                                element.removeAttribute('data-src');
+                            }
+                            
+                            // Load heavy content
+                            if (element.classList.contains('lazy-content')) {
+                                element.classList.remove('lazy-content');
+                                element.classList.add('content-loaded');
+                            }
+                            
+                            lazyLoadObserver.unobserve(element);
+                        }
+                    });
+                });
+                
+                // Observe lazy load elements
+                document.querySelectorAll('[data-src], .lazy-content').forEach(element => {
+                    lazyLoadObserver.observe(element);
+                });
+            }
+        }
+
+        
+        function initAccessibilityFeatures() {
+            // Keyboard navigation support
+            document.addEventListener('keydown', (e) => {
+                // Enable keyboard navigation for interactive elements
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+                
+                // ESC key to close mobile menu
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+            
+            // Remove keyboard navigation class on mouse use
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-navigation');
+            });
+            
+            // Add focus management for modal/dropdown elements
+            const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+            
+            // Trap focus within mobile menu when open
+            document.addEventListener('keydown', (e) => {
+                const mobileMenu = document.querySelector('.nav.mobile-open');
+                if (mobileMenu && e.key === 'Tab') {
+                    const focusableContent = mobileMenu.querySelectorAll(focusableElements);
+                    const firstElement = focusableContent[0];
+                    const lastElement = focusableContent[focusableContent.length - 1];
+                    
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            lastElement.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastElement) {
+                            firstElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+
+        /**
+         * Add ARIA labels and roles dynamically
+         */
+        function enhanceARIA() {
+            // Add ARIA labels to interactive elements
+            elements.navLinks.forEach((link, index) => {
+                link.setAttribute('aria-label', `Navigate to ${link.textContent} section`);
+            });
+            
+            // Add role and ARIA attributes to project cards
+            elements.projectCards.forEach((card, index) => {
+                card.setAttribute('role', 'article');
+                card.setAttribute('aria-labelledby', `project-title-${index}`);
+                
+                const title = card.querySelector('.project-title');
+                if (title) {
+                    title.id = `project-title-${index}`;
+                }
+            });
+            
+            // Add ARIA live region for dynamic content
+            const liveRegion = document.createElement('div');
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.setAttribute('aria-atomic', 'true');
+            liveRegion.style.position = 'absolute';
+            liveRegion.style.left = '-9999px';
+            liveRegion.id = 'live-region';
+            document.body.appendChild(liveRegion);
+        }
+
+        function initResponsiveHandling() {
+            const mediaQuery = window.matchMedia('(max-width: 768px)');
+            
+            function handleBreakpointChange(e) {
+                if (e.matches) {
+                    // Mobile breakpoint
+                    console.log('Switched to mobile view');
+                    
+                    // Adjust animations for mobile
+                    elements.fadeInElements.forEach(element => {
+                        element.style.transform = 'translateY(20px)';
+                    });
+                    
+                } else {
+                    // Desktop breakpoint
+                    console.log('Switched to desktop view');
+                    
+                    // Ensure mobile menu is closed
+                    closeMobileMenu();
+                    
+                    // Reset animations for desktop
+                    elements.fadeInElements.forEach(element => {
+                        element.style.transform = 'translateY(30px)';
+                    });
+                }
+            }
+            
+            // Initial check
+            handleBreakpointChange(mediaQuery);
+            
+            // Listen for changes
+            mediaQuery.addEventListener('change', handleBreakpointChange);
+        }
+
+       
+        function initErrorHandling() {
+            // Handle JavaScript errors gracefully
+            window.addEventListener('error', (e) => {
+                console.error('Portfolio error:', e.error);
+                
+                // Fallback for critical functionality
+                if (e.error && e.error.message.includes('IntersectionObserver')) {
+                    // Fallback animation without Intersection Observer
+                    setTimeout(() => {
+                        elements.fadeInElements.forEach(element => {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                        });
+                    }, 1000);
+                }
+            });
+            
+            // Handle network errors
+            window.addEventListener('online', () => {
+                console.log('Portfolio: Back online');
+                document.body.classList.remove('offline');
+            });
+            
+            window.addEventListener('offline', () => {
+                console.log('Portfolio: Gone offline');
+                document.body.classList.add('offline');
+            });
+        }
+
+       
+        function initPortfolio() {
+            console.log('🚀 Initializing Ankita Mall Portfolio v2.0 with Image Support');
+            
+            try {
+                // Core functionality
+                initNavigation();
+                initIntersectionObserver();
+                initPerformanceMonitoring();
+                
+                // Image functionality
+                initImageUpload();
+                loadSavedImage();
+                
+                // Interactive enhancements
+                initSkillTagInteractions();
+                initProjectCardAnimations();
+                initContactItemInteractions();
+                
+                // Advanced features
+                initParticleSystem();
+                initLazyLoading();
+                initAccessibilityFeatures();
+                enhanceARIA();
+                initResponsiveHandling();
+                initErrorHandling();
+                
+                console.log('✅ Portfolio initialized successfully');
+                
+            } catch (error) {
+                console.error('❌ Portfolio initialization error:', error);
+                
+                // Basic fallback functionality
+                elements.navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href');
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+        }
+
+        /**
+         * Initialize typing effect for hero title
+         */
+        function initHeroTypingEffect() {
+            window.addEventListener('load', () => {
+                const heroTitle = document.querySelector('.hero h1');
+                if (heroTitle) {
+                    const originalText = heroTitle.textContent;
+                    // Start typing effect after a short delay
+                    setTimeout(() => {
+                        createTypingEffect(heroTitle, originalText, 150);
+                    }, 2000);
+                }
+            });
+        }
+
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPortfolio);
+        } else {
+            initPortfolio();
+        }
+
+        // Initialize typing effect
+        initHeroTypingEffect();
+
+        // Add scroll listener with performance optimization
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(debouncedScrollHandler, 10);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', debounce(() => {
+            console.log('Window resized - updating layout');
+            // Recalculate layouts if needed
+        }, 250));
+
+        // Expose global functions for external access (if needed)
+        window.portfolioAPI = {
+            updateProfileImage,
+            showNotification,
+            smoothScrollTo
+        };
+
+        
+        const keyboardStyles = document.createElement('style');
+        keyboardStyles.textContent = `
+            .keyboard-navigation *:focus {
+                outline: 2px solid #3b82f6 !important;
+                outline-offset: 2px !important;
+            }
+            
+            .offline {
+                filter: grayscale(0.5);
+            }
+            
+            .offline::after {
+                content: 'Offline Mode';
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: #ef4444;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 12px;
+                z-index: 10000;
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+            
+            .nav.mobile-open {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 1rem;
+                border: 1px solid var(--border-color);
+                border-radius: 0 0 1rem 1rem;
+                box-shadow: var(--shadow-lg);
+            }
+            
+            @media (min-width: 769px) {
+                .nav.mobile-open {
+                    display: flex !important;
+                    position: static;
+                    flex-direction: row;
+                    background: none;
+                    backdrop-filter: none;
+                    padding: 0;
+                    border: none;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+            }
+        `;
+        document.head.appendChild(keyboardStyles);
+
+    </script>
+</body>
+</html>
